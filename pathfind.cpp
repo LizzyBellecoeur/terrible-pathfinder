@@ -12,16 +12,6 @@ void Cell::rankCell(const Cell& tagetCell)
                   +(y-tagetCell.y)*(y-tagetCell.y));
 }
 
-bool Cell::operator<(const Cell& other) const
-{
-    return ranking < other.ranking;
-}
-
-bool Cell::operator>(const Cell& other) const
-{
-    return ranking > other.ranking;
-}
-
 std::string* createMatrix(unsigned int rows)
 {
     return new std::string[rows];
@@ -99,7 +89,7 @@ bool solve(std::string* matrix, const Cell& currentSpace, const Cell& target)
     std::sort(moveVector.begin(), moveVector.end(),
     [](Cell* a, Cell* b)
     {
-        return a->ranking < b-ranking;
+        return a->ranking < b->ranking;
     });
 
     for(Cell* i : moveVector)
