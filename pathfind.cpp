@@ -86,6 +86,7 @@ bool solve(std::string* matrix, const Cell& currentSpace, const Cell& target)
 {
     std::vector<Cell*> moveVector;
     char& currentChar = matrix[currentSpace.y][currentSpace.x];
+    
     if(currentChar == 'E')
         return true;
     
@@ -98,7 +99,7 @@ bool solve(std::string* matrix, const Cell& currentSpace, const Cell& target)
     std::sort(moveVector.begin(), moveVector.end(),
     [](Cell* a, Cell* b)
     {
-        return *a < *b;
+        return a->ranking < b-ranking;
     });
 
     for(Cell* i : moveVector)

@@ -15,8 +15,6 @@ struct Cell
     Cell(unsigned int, unsigned int);
     Cell(){} //the `fuck off compiler` constructor.
     void rankCell(const Cell&);
-    bool operator<(const Cell&) const;
-    bool operator>(const Cell&) const;
 };
 
 std::string* createMatrix(unsigned int);
